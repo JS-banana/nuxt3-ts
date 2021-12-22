@@ -1,0 +1,59 @@
+{
+  "name": "nuxt-vue3-ts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi generate",
+    "start": "nuxi .output/server/index.mjs",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview",
+    "check": "nuxi typecheck",
+    "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:style && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix && yarn lint:style --fix",
+    "prepare": "husky install",
+    "test": "jest"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --cache",
+    "*.{css,scss,sass,html,vue}": "stylelint",
+    "*.{js,ts,json,css,scss,sass,vue}": "prettier --check --ignore-unknown"
+  },
+  "dependencies": {
+    "core-js": "^3.19.3",
+    "nuxt-edge": "latest",
+    "vue-demi": "^0.12.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.3",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
+    "@nuxtjs/eslint-config-typescript": "^8.0.0",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/stylelint-module": "^4.1.0",
+    "@vue/runtime-dom": "^3.2.26",
+    "@vue/test-utils": "^1.3.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^27.4.4",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^3.1.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.4",
+    "lint-staged": "^12.1.2",
+    "nuxt-windicss": "^2",
+    "postcss-html": "^1.3.0",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "ts-jest": "^27.1.1",
+    "vue-jest": "^3.0.4"
+  }
+}
